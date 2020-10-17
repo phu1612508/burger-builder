@@ -1,5 +1,6 @@
 import React from 'react';
 import Aux from '../../../Auxiliary/Auxiliary';
+import Button from '../../UI/Button/Button';
 
 const orderSummary = (props) => {
 	const ingredientSummary = props.ingredients;
@@ -15,8 +16,12 @@ const orderSummary = (props) => {
 			<p>The delicious burger with the following ingredients:</p>
 			<ul>{itemSummary}</ul>
 			<p>Continue to check out?</p>
-			<button>CANCEL</button>
-			<button>CONTINUE</button>
+			<Button btnType='Danger' clicked={props.purchaseCanceled}>
+				CANCEL
+			</Button>
+			<Button btnType='Success' clicked={props.purchaseContinued}>
+				CONTINUE
+			</Button>
 		</Aux>
 	);
 };
